@@ -1,0 +1,9 @@
+{
+  "name": "danayo-lens-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Danayo Lens & Legacy marketing site",
+  "scripts": {
+    "build": "node scripts/build.js"
+  }
+}
