@@ -1,0 +1,1181 @@
+/*
+  Danayo Lens & Legacy - www.danayolens.com
+  Modern, premium, and responsive single-page website
+  Brand colors: #1F2326 (Charcoal), #C9A15B (Gold), #F7F5F0 (Ivory)
+  Fonts: Playfair Display, Montserrat
+  Designed with story-driven, timeless elegance
+*/
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Danayo Lens & Legacy. Crafting stories through lens—premium wedding, brand, and cinematic photography & films.">
+  <title>Danayo Lens & Legacy | Crafting Stories Through Lens</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/cursorcoder/demo-assets/danayo-d-favicon.svg" type="image/svg+xml">
+  <style>
+    :root {
+      --charcoal: #1F2326;
+      --gold: #C9A15B;
+      --ivory: #F7F5F0;
+      --font-head: 'Playfair Display', serif;
+      --font-base: 'Montserrat', Arial, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--ivory);
+      color: var(--charcoal);
+      font-family: var(--font-base);
+      margin: 0;
+      padding: 0;
+      font-size: 18px;
+      line-height: 1.7;
+    }
+    header {
+      background: transparent;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 6vw 0 6vw;
+      position: absolute;
+      width: 100%;
+      z-index: 2;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      font-family: var(--font-head);
+      color: var(--gold);
+      font-size: 2.2rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-decoration: none;
+      gap: 0.7rem;
+    }
+    .logo svg {
+      height: 2.1rem;
+      width: 2.1rem;
+      fill: var(--gold);
+    }
+    nav {
+      display: flex;
+      gap: 2.3rem;
+    }
+    nav a {
+      font-family: var(--font-base);
+      color: var(--ivory);
+      background: none;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.05rem;
+      letter-spacing: 0.7px;
+      position: relative;
+      transition: color 0.2s;
+    }
+    nav a::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      transition: width 0.25s;
+    }
+    nav a:hover, nav a:focus {
+      color: var(--gold);
+    }
+    nav a:hover::after, nav a:focus::after {
+      width: 100%;
+    }
+    /* HERO SECTION */
+    .hero {
+      min-height: 96vh;
+      background: 
+        linear-gradient(115deg, rgba(31,35,38, 0.71), rgba(201,161,91, 0.12)),
+        url('https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(31,35,38, 0.55);
+      z-index: 1;
+      backdrop-filter: blur(3px);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      color: var(--ivory);
+      max-width: 700px;
+      margin-top: 4.5rem;
+      animation: fadeIn 1.2s cubic-bezier(.33,1.05,.5,1.13);
+    }
+    .hero-logo {
+      display: flex;
+      justify-content: center;
+      gap: 0.9rem;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+    .hero-logo svg {
+      width: 4rem;
+      height: 4rem;
+      fill: var(--gold);
+    }
+    .hero-text h1 {
+      font-family: var(--font-head);
+      font-size: 2.8rem;
+      letter-spacing: 1.3px;
+      color: var(--ivory);
+      margin: 0 0 0.3em 0;
+      font-weight: 700;
+      text-shadow: 0px 3px 36px rgba(31,35,38,.12);
+    }
+    .hero-text h2 {
+      font-family: var(--font-head);
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: var(--gold);
+      margin: 0 0 1em 0;
+      letter-spacing: 1px;
+      line-height: 1.3;
+    }
+    .hero-manifesto {
+      font-size: 1.17rem;
+      margin-bottom: 2.7em;
+      color: var(--ivory);
+      font-weight: 400;
+      filter: brightness(100%);
+      text-shadow: 0 0 8px rgba(31,35,38,0.09);
+    }
+    .hero-cta {
+      display: inline-block;
+      padding: 0.93em 2.3em;
+      background: var(--gold);
+      color: var(--charcoal);
+      font-size: 1.15rem;
+      font-weight: 700;
+      border-radius: 32px;
+      border: none;
+      text-decoration: none;
+      font-family: var(--font-base);
+      box-shadow: 0 2px 20px rgba(201,161,91,0.14);
+      letter-spacing: 1px;
+      transition: background 0.2s, color 0.2s, box-shadow 0.23s;
+      cursor: pointer;
+      margin-top: 1em;
+      box-sizing: border-box;
+    }
+    .hero-cta:hover, .hero-cta:focus {
+      background: #f5e6c3;
+      color: var(--gold);
+      box-shadow: 0 4px 36px 0 rgba(201,161,91,0.24);
+      text-shadow: 0 0 2px #C9A15B44;
+    }
+    /* ABOUT SECTION */
+    #about {
+      background: var(--charcoal);
+      color: var(--ivory);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 6.5vw 6vw 4vw 6vw;
+      min-height: 36vh;
+      gap: 2.7rem;
+      position: relative;
+    }
+    .about-img {
+      flex: 0 0 220px;
+      width: 220px;
+      max-width: 35vw;
+      border-radius: 150px 130px 160px 110px;
+      overflow: hidden;
+      box-shadow: 0 2px 32px rgba(31,35,38,0.24);
+      border: 5px solid var(--gold);
+    }
+    .about-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+    .about-content {
+      flex: 1 1 320px;
+      font-size: 1.12rem;
+    }
+    .about-content h2 {
+      font-family: var(--font-head);
+      font-size: 2rem;
+      letter-spacing: 0.5px;
+      color: var(--gold);
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 0.75em;
+    }
+    .about-content .brand-values {
+      display: flex;
+      gap: 2rem;
+      margin-top: 1.4em;
+      font-size: 1.06rem;
+    }
+    .brand-values span {
+      font-weight: 700;
+      background: var(--gold);
+      color: var(--charcoal);
+      padding: 0.43em 1.1em;
+      border-radius: 23px;
+      margin-right: 0.8em;
+      box-shadow: 0 2px 12px #c9a15b22;
+      font-family: var(--font-base);
+      display: inline-block;
+    }
+    /* PORTFOLIO SECTION */
+    #portfolio {
+      background: var(--ivory);
+      padding: 7vw 6vw 3vw 6vw;
+    }
+    #portfolio h2 {
+      font-family: var(--font-head);
+      color: var(--gold);
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 0.7em;
+    }
+    .portfolio-categories {
+      display: flex;
+      justify-content: center;
+      gap: 1.8rem;
+      margin-bottom: 1.3em;
+      flex-wrap: wrap;
+    }
+    .portfolio-categories button {
+      background: none;
+      color: var(--charcoal);
+      font-family: var(--font-base);
+      font-weight: 600;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      border-bottom: 2.5px solid transparent;
+      padding: 0.3em 1em 0.35em 1em;
+      transition: color 0.2s, border-color 0.3s;
+      border-radius: 8px 8px 0 0;
+    }
+    .portfolio-categories button.active,
+    .portfolio-categories button:hover {
+      color: var(--gold);
+      border-bottom: 2.5px solid var(--gold);
+    }
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+      gap: 1.75rem;
+      margin-bottom: 1em;
+    }
+    .portfolio-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 18px;
+      background: #fff;
+      cursor: pointer;
+      box-shadow: 0 2px 18px 0 rgba(31,35,38,0.12), 0 1.5px 24px #c9a15b11;
+      transition: box-shadow .26s, transform .28s;
+    }
+    .portfolio-item:hover, .portfolio-item:focus {
+      box-shadow: 0 4px 32px 0 rgba(201,161,91,0.25);
+      transform: translateY(-7px) scale(1.015);
+    }
+    .portfolio-item img, .portfolio-item video {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      aspect-ratio: 4/3;
+      transition: filter .2s;
+      filter: brightness(98%);
+    }
+    .portfolio-title {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(0deg, rgba(31,35,38,0.93) 80%, rgba(31,35,38,0.03));
+      color: var(--ivory);
+      font-size: 1.08rem;
+      font-weight: 500;
+      padding: 0.85em 1em 0.6em 1em;
+      font-family: var(--font-head);
+      letter-spacing: 0.3px;
+      opacity: 0.95;
+      transition: background .18s;
+      z-index: 2;
+      pointer-events: none;
+    }
+    /* Lightbox styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top:0; left:0; right:0; bottom:0;
+      background: rgba(31,35,38,0.97);
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      animation: fadeIn 0.27s;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox-content {
+      position: relative;
+      max-width: 92vw;
+      max-height: 88vh;
+      box-shadow: 0 2px 24px #c9a15b66;
+      border-radius: 18px;
+      overflow: hidden;
+      background: var(--charcoal);
+      padding: 1.2em 1.2em 0.7em 1.2em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .lightbox-content img, 
+    .lightbox-content video {
+      max-width: 80vw;
+      max-height: 67vh;
+      border-radius: 14px;
+      background: var(--ivory);
+      display: block;
+    }
+    .lightbox-caption {
+      font-family: var(--font-head);
+      color: var(--gold);
+      margin-top: 1em;
+      text-align: center;
+      font-size: 1.1rem;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: -10px; right: -10px;
+      background: var(--gold);
+      color: var(--charcoal);
+      border: none;
+      border-radius: 50%;
+      width: 38px; height: 38px;
+      font-size: 2rem;
+      cursor: pointer;
+      font-weight: bold;
+      line-height: 38px;
+      text-align: center;
+      transition: background .17s, color .17s;
+      z-index: 3;
+      box-shadow: 0 1.5px 17px #c9a15b11;
+    }
+    .lightbox-close:hover { background: #eed399; color: var(--charcoal);}
+    /* SERVICES SECTION */
+    #services {
+      background: var(--charcoal);
+      color: var(--ivory);
+      padding: 7vw 6vw 3vw 6vw;
+    }
+    #services h2 {
+      font-family: var(--font-head);
+      color: var(--gold);
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 1.2em;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 1.5em;
+    }
+    .service-card {
+      background: #24282C;
+      border-radius: 15px;
+      box-shadow: 0 1.5px 18px #c9a15b19;
+      padding: 2.2em 1.5em 1.5em 1.5em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 300px;
+      transition: box-shadow .25s, transform .18s;
+      text-align: center;
+      position: relative;
+      border: 2px solid transparent;
+    }
+    .service-card:hover, .service-card:focus-within {
+      border-color: var(--gold);
+      box-shadow: 0 2px 32px 0 #c9a15b33;
+      transform: translateY(-5px) scale(1.014);
+    }
+    .service-icon {
+      font-size: 2.7em;
+      margin-bottom: 0.8em;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 2.7em;
+    }
+    .service-title {
+      font-family: var(--font-head);
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: var(--gold);
+      margin-bottom: 0.6em;
+    }
+    .service-desc {
+      font-size: 1.05rem;
+      margin-bottom: 1.3em;
+      color: #ddd5c2;
+    }
+    .service-cta {
+      display: inline-block;
+      padding: 0.53em 1.7em;
+      background: var(--gold);
+      color: var(--charcoal);
+      font-family: var(--font-base);
+      font-weight: 700;
+      border-radius: 22px;
+      text-decoration: none;
+      font-size: 1.05rem;
+      margin-top: auto;
+      box-shadow: 0 1.5px 8px #c9a15b21;
+      border: none;
+      cursor: pointer;
+      transition: background .17s, color .17s, box-shadow .18s;
+    }
+    .service-cta:hover, .service-cta:focus {
+      background: #f5e6c3;
+      color: var(--gold);
+      box-shadow: 0 4px 19px #c9a15b44;
+    }
+    /* TESTIMONIALS SECTION */
+    #testimonials {
+      background: var(--ivory);
+      padding: 7vw 6vw 3vw 6vw;
+      color: var(--charcoal);
+    }
+    #testimonials h2 {
+      font-family: var(--font-head);
+      color: var(--gold);
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 1.1em;
+    }
+    .testimonial-carousel {
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      gap: 2.3rem;
+      position: relative;
+      flex-wrap: wrap;
+    }
+    .testimonial {
+      background: #f6f2e6;
+      border-radius: 17px;
+      box-shadow: 0 2px 16px #c9a15b13;
+      max-width: 355px;
+      min-width: 260px;
+      padding: 2.1em 1.7em 2.1em 1.7em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 90vw;
+      transform: translateX(-50%) scale(0.99);
+      pointer-events: none;
+      transition: transform .5s, opacity .5s;
+      z-index: 0;
+    }
+    .testimonial.current {
+      position: relative;
+      opacity: 1;
+      transform: translateX(0) scale(1);
+      z-index: 1;
+      pointer-events: auto;
+    }
+    .testimonial-quote {
+      font-style: italic;
+      margin-bottom: 1.2em;
+      font-size: 1.1rem;
+      font-family: var(--font-head);
+      color: var(--charcoal);
+      text-shadow: 0 1px 9px #c9a15b11;
+    }
+    .testimonial-stars {
+      color: var(--gold);
+      display: flex;
+      justify-content: center;
+      font-size: 1.2rem;
+      margin-bottom: 0.8em;
+      gap: 0.1em;
+    }
+    .testimonial-client {
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 0.12em;
+      font-size: 1.06rem;
+    }
+    .testimonial-event {
+      font-size: 0.98rem;
+      color: #957b3e;
+      font-family: var(--font-base);
+    }
+    .testimonial-controls {
+      display: flex;
+      justify-content: center;
+      gap: 1.4em;
+      margin-top: 2.2em;
+    }
+    .testimonial-controls button {
+      background: var(--gold);
+      color: var(--charcoal);
+      border: none;
+      border-radius: 50%;
+      width: 38px;
+      height: 38px;
+      font-size: 1.38rem;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 1px 8px #c9a15b22;
+      transition: background .13s, color .13s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .testimonial-controls button:hover, 
+    .testimonial-controls button:focus {
+      background: #eed399;
+      color: var(--charcoal);
+    }
+    /* CONTACT SECTION */
+    #contact {
+      background: var(--charcoal);
+      color: var(--ivory);
+      padding: 6vw 6vw 3vw 6vw;
+      text-align: center;
+    }
+    #contact h2 {
+      font-family: var(--font-head);
+      color: var(--gold);
+      font-size: 2rem;
+      margin-bottom: 0.7em;
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.18em;
+      margin: 0 auto 1.5em auto;
+      max-width: 410px;
+      width: 100%;
+    }
+    .contact-form input, .contact-form textarea {
+      font-family: var(--font-base);
+      background: #23262a;
+      border: 1.5px solid #bbb;
+      border-radius: 6px;
+      padding: 0.71em 1em;
+      color: var(--ivory);
+      font-size: 1.07rem;
+      resize: none;
+      outline: none;
+      transition: border-color .16s, background .16s;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--gold);
+      background: #292c2f;
+    }
+    .contact-form button {
+      background: var(--gold);
+      color: var(--charcoal);
+      font-family: var(--font-base);
+      font-weight: 700;
+      border-radius: 22px;
+      font-size: 1.08rem;
+      padding: 0.65em 2em;
+      border: none;
+      margin-top: 0.6em;
+      transition: background .18s, color .18s;
+      box-shadow: 0 1.5px 8px #c9a15b11;
+      cursor: pointer;
+    }
+    .contact-form button:hover,
+    .contact-form button:focus {
+      background: #f5e6c3;
+      color: var(--gold);
+      box-shadow: 0 2px 21px #c9a15b33;
+    }
+    .contact-direct {
+      font-size: 1rem;
+      margin-top: 1.9em;
+      color: #e5d29e;
+    }
+    .contact-socials {
+      margin-top: 2.3em;
+      display: flex;
+      justify-content: center;
+      gap: 1.6em;
+    }
+    .contact-socials a {
+      color: var(--gold);
+      font-size: 1.56rem;
+      text-decoration: none;
+      transition: color .16s, filter .16s;
+      filter: drop-shadow(0 2px 9px #c9a15b15);
+    }
+    .contact-socials a:hover, .contact-socials a:focus {
+      color: #F7F5F0;
+      filter: drop-shadow(0 2px 18px #c9a15b99);
+    }
+    .consult-cta {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--charcoal);
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 1.11rem;
+      padding: 0.47em 1.7em;
+      margin-top: 2.2em;
+      text-decoration: none;
+      box-shadow: 0 2px 11px #c9a15b11;
+      transition: background .13s, color .12s;
+    }
+    .consult-cta:hover, .consult-cta:focus {
+      background: #eed399;
+      color: var(--charcoal);
+      box-shadow: 0 2.5px 18px #c9a15b55;
+    }
+    /* FOOTER */
+    footer {
+      background: #181a1c;
+      color: var(--ivory);
+      text-align: center;
+      padding: 2.5em 0 1.7em 0;
+      font-size: 1.06rem;
+      position: relative;
+      margin-top: 3vw;
+    }
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.4em;
+    }
+    .footer-submark {
+      display: flex;
+      align-items: center;
+      gap: 0.7em;
+      margin-bottom: 0.2em;
+    }
+    .footer-submark svg {
+      height: 1.7em;
+      width: 1.7em;
+      fill: var(--gold);
+    }
+    .footer-links {
+      display: flex;
+      gap: 1.6em;
+      margin-bottom: 0.7em;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      color: var(--gold);
+      font-family: var(--base-font);
+      text-decoration: none;
+      font-size: 1.02em;
+      font-weight: 600;
+      border-bottom: 1.5px solid transparent;
+      padding-bottom: 0.2em;
+      transition: border-color .15s, color .15s;
+    }
+    .footer-links a:hover, .footer-links a:focus {
+      color: var(--ivory);
+      border-bottom: 1.5px solid var(--gold);
+    }
+    .footer-socials {
+      display: flex;
+      gap: 1.2em;
+      margin-top: 0.6em;
+      justify-content: center;
+    }
+    .footer-socials a {
+      color: var(--gold);
+      font-size: 1.21rem;
+      text-decoration: none;
+      transition: color .16s, filter .16s;
+      filter: drop-shadow(0 2px 9px #c9a15b15);
+    }
+    .footer-socials a:hover, .footer-socials a:focus {
+      color: #e5d29e;
+      filter: drop-shadow(0 2px 14px #c9a15bdd);
+    }
+    .footer-copyright {
+      color: #b79e71;
+      margin-top: 0.6em;
+      font-size: 1rem;
+    }
+    /* ANIMATIONS */
+    @keyframes fadeIn { from {opacity:0;transform: translateY(32px);} to {opacity:1;transform: translateY(0);} }
+    /* MEDIA QUERIES */
+    @media (max-width: 900px) {
+      header, .hero, #about, #portfolio, #services, #testimonials, #contact { padding-left: 5vw; padding-right: 5vw; }
+      .hero-content { margin-top: 0; }
+      .about-img { margin-bottom: 2em; }
+      .portfolio-grid, .services-grid { gap: 1em; }
+      .testimonial-carousel { gap: 0; }
+      .testimonial { padding: 2em 1em 2em 1em; }
+    }
+    @media (max-width: 650px) {
+      header { flex-direction: column; padding-top: 1vw; gap: 1rem; }
+      nav { gap: 1.1em; flex-wrap: wrap; font-size: 0.98em;}
+      .hero { min-height: 90vh; }
+      .hero-logo svg { width: 2.6rem; height: 2.6rem;}
+      .about-img { width: 150px; min-width: 98px; flex-basis: 36vw; }
+      #about { flex-direction: column; align-items: flex-start; text-align: left; gap: 1.2em;}
+      .about-content h2, #portfolio h2, #services h2, #testimonials h2, #contact h2 { font-size: 1.37rem; }
+      .portfolio-grid, .services-grid { grid-template-columns: 1fr; }
+      .testimonial-carousel, .footer-inner { flex-direction: column; }
+      .footer-links { gap: 0.8em; }
+      .footer-socials { gap: 0.7em; }
+      .testimonial { min-width: 95vw; max-width: 97vw;}
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER / NAV -->
+  <header>
+    <a href="#" class="logo" aria-label="Danayo Lens & Legacy - Home">
+      <!-- Logo: Stylized D with aperture -->
+      <svg viewBox="0 0 40 40">
+        <circle cx="20" cy="20" r="17" stroke="#C9A15B" stroke-width="2" fill="none"/>
+        <path d="M13.5,32 Q28,34 28,20 Q28,6 13.5,8" stroke="#C9A15B" stroke-width="3" fill="none"/>
+        <g>
+          <circle cx="18" cy="20" r="6" stroke="#C9A15B" stroke-width="2" fill="none"/>
+          <path d="M18,14 L18,26" stroke="#C9A15B" stroke-width="1.6"/>
+          <path d="M12.5,20 L23.5,20" stroke="#C9A15B" stroke-width="1.6"/>
+          <path d="M22.7,16 L13.3,24" stroke="#C9A15B" stroke-width="1.3"/>
+          <path d="M13.3,16 L22.7,24" stroke="#C9A15B" stroke-width="1.3"/>
+        </g>
+      </svg>
+      Danayo
+    </a>
+    <nav aria-label="Primary navigation">
+      <a href="#portfolio">Portfolio</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-logo">
+        <svg viewBox="0 0 54 54">
+          <circle cx="27" cy="27" r="22" stroke="#C9A15B" stroke-width="3" fill="none"/>
+          <path d="M17,44 Q41,46 41,27 Q41,8 17,10" stroke="#C9A15B" stroke-width="4" fill="none"/>
+          <g>
+            <circle cx="24" cy="27" r="8" stroke="#C9A15B" stroke-width="2.2" fill="none"/>
+            <path d="M24,19 L24,35" stroke="#C9A15B" stroke-width="2"/>
+            <path d="M16,27 L32,27" stroke="#C9A15B" stroke-width="2"/>
+            <path d="M31,22 L17,32" stroke="#C9A15B" stroke-width="1.4"/>
+            <path d="M17,22 L31,32" stroke="#C9A15B" stroke-width="1.4"/>
+          </g>
+        </svg>
+      </span>
+      <div class="hero-text">
+        <h1>Danayo Lens & Legacy</h1>
+        <h2>Crafting stories through lens</h2>
+      </div>
+      <div class="hero-manifesto">Capturing weddings, milestones, and brands—transforming fleeting experiences into timeless legacies.</div>
+      <a href="#contact" class="hero-cta">Book a Consultation</a>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio">
+    <h2>Portfolio</h2>
+    <div class="portfolio-categories" role="tablist" aria-label="Portfolio categories">
+      <button type="button" class="active" data-category="weddings" aria-selected="true" role="tab">Weddings</button>
+      <button type="button" data-category="brands" aria-selected="false" role="tab">Brand Shoots</button>
+      <button type="button" data-category="films" aria-selected="false" role="tab">Cinematic Films</button>
+    </div>
+    <div class="portfolio-grid" id="portfolioGrid">
+      <!-- Example items: [REPLACE with your portfolio, currently with placeholder unsplash/pixabay links.] -->
+      <!-- Weddings -->
+      <div class="portfolio-item" data-category="weddings" tabindex="0">
+        <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=700&q=80" alt="Bride and groom kiss at golden hour on hilltop.">
+        <div class="portfolio-title">Golden Hour Embrace</div>
+      </div>
+      <div class="portfolio-item" data-category="weddings" tabindex="0">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=700&q=80" alt="Candid laughter at outdoor wedding table.">
+        <div class="portfolio-title">Moments of Joy</div>
+      </div>
+      <div class="portfolio-item" data-category="weddings" tabindex="0">
+        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=700&q=80" alt="Wedding couple in elegant ballroom, gold accents.">
+        <div class="portfolio-title">Timeless Romance</div>
+      </div>
+
+      <!-- Brand Shoots -->
+      <div class="portfolio-item" data-category="brands" tabindex="0" style="display:none;">
+        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=700&q=80" alt="Brand shoot with artisan jewelry & warm backdrops.">
+        <div class="portfolio-title">Artisan Gold</div>
+      </div>
+      <div class="portfolio-item" data-category="brands" tabindex="0" style="display:none;">
+        <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=700&q=80" alt="Coffee shop ambience, latte art brand focus.">
+        <div class="portfolio-title">Morning Ambience</div>
+      </div>
+      <!-- Cinematic Films (shown as thumbnail - in real prod could be play-cap enabled.) -->
+      <div class="portfolio-item" data-category="films" tabindex="0" style="display:none;">
+        <video poster="https://images.unsplash.com/photo-1465101178521-c1a9136a3bea?auto=format&fit=crop&w=700&q=80" controls preload="none">
+          <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+          Cinematic wedding film preview.
+        </video>
+        <div class="portfolio-title">Legacy in Motion</div>
+      </div>
+      <div class="portfolio-item" data-category="films" tabindex="0" style="display:none;">
+        <video poster="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=700&q=80" controls preload="none">
+          <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+          Branding film highlight.
+        </video>
+        <div class="portfolio-title">Brand Story Highlight</div>
+      </div>
+    </div>
+    <!-- Lightbox modal -->
+    <div class="lightbox" id="lightboxModal" tabindex="-1" aria-modal="true" aria-label="Gallery modal">
+      <div class="lightbox-content">
+        <button class="lightbox-close" id="lightboxCloseBtn" title="Close" aria-label="Close modal">&times;</button>
+        <div id="lightboxInner"></div>
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <h2>Services</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon" aria-hidden="true">
+          <!-- Wedding Icon (rings) -->
+          <svg width="36" height="36" viewBox="0 0 36 36">
+            <circle cx="13" cy="22" r="7" stroke="#C9A15B" stroke-width="2.2" fill="none"/>
+            <circle cx="23" cy="16" r="7" stroke="#C9A15B" stroke-width="2.2" fill="none"/>
+          </svg>
+        </div>
+        <div class="service-title">Wedding Photography</div>
+        <div class="service-desc">Candid, classic, and creative coverage tailored to you—preserving every chapter of your day.</div>
+        <a href="#contact" class="service-cta">Inquire Now</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon" aria-hidden="true">
+          <!-- Cinematic Icon (film camera) -->
+          <svg width="38" height="38" viewBox="0 0 38 38">
+            <rect x="8" y="15" width="18" height="13" rx="2.8" stroke="#C9A15B" stroke-width="2.2" fill="none"/>
+            <polygon points="26,18 34,15 34,30 26,27" stroke="#C9A15B" stroke-width="2" fill="none"/>
+            <circle cx="13" cy="13" r="3" stroke="#C9A15B" stroke-width="1.2" fill="none"/>
+          </svg>
+        </div>
+        <div class="service-title">Cinematic Highlight Films</div>
+        <div class="service-desc">Films curated to feel—the essence of the moments and your story, artfully composed and edited.</div>
+        <a href="#contact" class="service-cta">Inquire Now</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon" aria-hidden="true">
+          <!-- Brand Shoot (briefcase/camera) -->
+          <svg width="36" height="36" viewBox="0 0 36 36">
+            <rect x="9" y="13" width="18" height="13" rx="2.5" stroke="#C9A15B" stroke-width="2.2" fill="none"/>
+            <circle cx="18" cy="20" r="5" stroke="#C9A15B" stroke-width="2" fill="none"/>
+            <rect x="15" y="9" width="6" height="4" rx="1.2" stroke="#C9A15B" stroke-width="1" fill="none"/>
+          </svg>
+        </div>
+        <div class="service-title">Brand Shoots</div>
+        <div class="service-desc">Visual storytelling for brands—showcasing your products, people, or place with intentional style.</div>
+        <a href="#contact" class="service-cta">Inquire Now</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon" aria-hidden="true">
+          <!-- Visual Identity -->
+          <svg width="36" height="36" viewBox="0 0 36 36">
+            <rect x="10" y="10" width="16" height="16" rx="3" stroke="#C9A15B" stroke-width="2.1" fill="none"/>
+            <circle cx="18" cy="18" r="5.5" stroke="#C9A15B" stroke-width="2" fill="none"/>
+          </svg>
+        </div>
+        <div class="service-title">Visual Identity Packages</div>
+        <div class="service-desc">Elevate your brand presence with logo, palette, and imagery designed for cohesion and impact.</div>
+        <a href="#contact" class="service-cta">Inquire Now</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon" aria-hidden="true">
+          <!-- Retouching (wand) -->
+          <svg width="34" height="34" viewBox="0 0 34 34">
+            <rect x="14" y="6" width="6" height="22" rx="1.2" transform="rotate(30 17 17)" stroke="#C9A15B" stroke-width="2" fill="none"/>
+            <circle cx="17" cy="17" r="2" fill="#C9A15B"/>
+            <circle cx="27" cy="9" r="1" fill="#C9A15B"/>
+            <circle cx="7" cy="26" r="1" fill="#C9A15B"/>
+          </svg>
+        </div>
+        <div class="service-title">Retouching &amp; Color Grading</div>
+        <div class="service-desc">Professional edits for a distinctive, consistent aesthetic—on every image and film.</div>
+        <a href="#contact" class="service-cta">Inquire Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-img">
+      <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=420&q=80" alt="Portrait of founder - Danayo, smiling softly by a window.">
+    </div>
+    <div class="about-content">
+      <h2>Founder & Vision</h2>
+      <p>
+        Welcome! I’m Danayo—a visual storyteller who believes the camera holds more than moments; it preserves the legacy of joy, nuance, and connections that shape our lives. My artistry is rooted in authenticity, blending editorial style, documentary candor, and a touch of cinematic flair.
+      </p>
+      <p>
+        I approach every wedding, milestone, or brand with deep intention &mdash; capturing not just how it looked, but precisely how it <strong>felt</strong>. Each collaboration is a journey in listening, understanding your story, and seeking beauty in both grand gestures and gentle everyday light.
+      </p>
+      <div class="brand-values">
+        <span>Authenticity</span>
+        <span>Storytelling</span>
+        <span>Legacy</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <h2>Testimonials</h2>
+    <div class="testimonial-carousel" id="testimonialCarousel">
+      <!-- Each .testimonial is a slide -->
+      <div class="testimonial current">
+        <div class="testimonial-stars" aria-label="5 stars">
+          <span aria-hidden="true">&starf;</span><span aria-hidden="true">&starf;</span><span aria-hidden="true">&starf;</span><span aria-hidden="true">&starf;</span><span aria-hidden="true">&starf;</span>
+        </div>
+        <div class="testimonial-quote">
+          “From the first consultation, Danayo truly listened to our vision. Every photo felt like our own memory, just more magical!”
+        </div>
+        <div class="testimonial-client">Jane & Malik</div>
+        <div class="testimonial-event">Wedding</div>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial-stars" aria-label="5 stars">
+          <span aria-hidden="true">&starf;</span><span aria-hidden="true">&starf;</span><span aria-hidden="true">&starf;</span><span aria-hidden="true">&starf;</span><span aria-hidden="true">&starf;</span>
+        </div>
+        <div class="testimonial-quote">
+          “Our branding film moved our team to tears. Elegant, cinematic, and so intentional. Thank you, Danayo!”
+        </div>
+        <div class="testimonial-client">Olivia Green</div>
+        <div class="testimonial-event">Brand Shoot & Film</div>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial-stars" aria-label="5 stars">
+          <span aria-hidden="true">&starf;</span><span aria-hidden="true">&starf;</span><span aria-hidden="true">&starf;</span><span aria-hidden="true">&starf;</span><span aria-hidden="true">&starf;</span>
+        </div>
+        <div class="testimonial-quote">
+          “The images are artful & real—family keepsakes for generations. Couldn’t recommend Danayo Lens more highly.”
+        </div>
+        <div class="testimonial-client">Akira K.</div>
+        <div class="testimonial-event">Family Milestone</div>
+      </div>
+    </div>
+    <div class="testimonial-controls">
+      <button aria-label="Previous testimonial" id="testimonialPrevBtn">&lt;</button>
+      <button aria-label="Next testimonial" id="testimonialNextBtn">&gt;</button>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <form class="contact-form" name="contact" method="POST" enctype="application/x-www-form-urlencoded" autocomplete="on">
+      <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name">
+      <input type="email" name="email" placeholder="Your Email" required aria-label="Your Email">
+      <textarea name="message" placeholder="Your Message" rows="5" required aria-label="Your Message"></textarea>
+      <button type="submit" aria-label="Send Message">Send Message</button>
+    </form>
+    <div class="contact-direct">
+      Or email us directly: <a href="mailto:danayolens@gmail.com" style="color:#C9A15B;">danayolens@gmail.com</a>
+    </div>
+    <div class="contact-socials" aria-label="Connect on social media">
+      <a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn">
+        <svg viewBox="0 0 32 32" height="1.5em"><circle cx="16" cy="16" r="16" fill="none"/><g stroke="none"><rect x="8" y="13" width="3" height="11" fill="currentColor"/><rect x="18" y="16" width="3" height="8" fill="currentColor"/><rect x="13" y="13" width="3" height="11" fill="currentColor"/><ellipse cx="9.5" cy="10" rx="1.5" ry="1.5" fill="currentColor"/><rect x="16" y="16" width="3" height="8" fill="currentColor"/><path d="M19.5 16c-1.2 0-2 .9-2 2.2V24h3v-4.3c0-.7.3-1.3 1-1.3s1 .8 1 1.3V24h3v-4.7c0-2.1-1.4-3.3-3-3.3z" fill="currentColor"/></g></svg>
+      </a>
+      <a href="https://instagram.com/" target="_blank" aria-label="Instagram">
+        <svg viewBox="0 0 32 32"  height="1.5em"><circle cx="16" cy="16" r="15" fill="none"/><g stroke="none"><rect x="8" y="8" width="16" height="16" rx="5" fill="currentColor"/><circle cx="16" cy="16" r="4.2" fill="#F7F5F0"/><circle cx="21.3" cy="10.7" r="1.15" fill="#F7F5F0"/></g></svg>
+      </a>
+      <a href="https://facebook.com/" target="_blank" aria-label="Facebook">
+        <svg viewBox="0 0 32 32" height="1.5em"><circle cx="16" cy="16" r="16" fill="none"/><g stroke="none"><path d="M19 32V19.4h4v-4h-4v-2.5c0-.8.3-1.2 1.1-1.2H23v-4h-2.2c-3 0-4.3 1.2-4.3 4V15.4h-3v4h3V32h4z" fill="currentColor"/></g></svg>
+      </a>
+      <a href="https://x.com/" target="_blank" aria-label="X (Twitter)">
+        <svg viewBox="0 0 32 32" height="1.5em"><circle cx="16" cy="16" r="16" fill="none"/><g stroke="none"><path d="M10 10l12 12M22 10L10 22" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></g></svg>
+      </a>
+    </div>
+    <a class="consult-cta" href="#contact">Schedule a 30-min consultation</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-submark">
+        <svg viewBox="0 0 30 30" width="28" height="28">
+          <circle cx="15" cy="15" r="12" stroke="#C9A15B" stroke-width="2" fill="none"/>
+          <path d="M12,23 Q23,25 23,15 Q23,5 12,7" stroke="#C9A15B" stroke-width="2" fill="none"/>
+        </svg>
+        Danayo Lens & Legacy
+      </span>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="#">Home</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="footer-socials">
+        <a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn">
+          <svg viewBox="0 0 32 32" height="1.2em"><circle cx="16" cy="16" r="16" fill="none"/><g stroke="none"><rect x="8" y="13" width="3" height="11" fill="currentColor"/><rect x="18" y="16" width="3" height="8" fill="currentColor"/><rect x="13" y="13" width="3" height="11" fill="currentColor"/><ellipse cx="9.5" cy="10" rx="1.5" ry="1.5" fill="currentColor"/><rect x="16" y="16" width="3" height="8" fill="currentColor"/><path d="M19.5 16c-1.2 0-2 .9-2 2.2V24h3v-4.3c0-.7.3-1.3 1-1.3s1 .8 1 1.3V24h3v-4.7c0-2.1-1.4-3.3-3-3.3z" fill="currentColor"/></g></svg>
+        </a>
+        <a href="https://instagram.com/" target="_blank" aria-label="Instagram">
+          <svg viewBox="0 0 32 32"  height="1.2em"><circle cx="16" cy="16" r="15" fill="none"/><g stroke="none"><rect x="8" y="8" width="16" height="16" rx="5" fill="currentColor"/><circle cx="16" cy="16" r="4.2" fill="#F7F5F0"/><circle cx="21.3" cy="10.7" r="1.15" fill="#F7F5F0"/></g></svg>
+        </a>
+        <a href="https://facebook.com/" target="_blank" aria-label="Facebook">
+          <svg viewBox="0 0 32 32" height="1.2em"><circle cx="16" cy="16" r="16" fill="none"/><g stroke="none"><path d="M19 32V19.4h4v-4h-4v-2.5c0-.8.3-1.2 1.1-1.2H23v-4h-2.2c-3 0-4.3 1.2-4.3 4V15.4h-3v4h3V32h4z" fill="currentColor"/></g></svg>
+        </a>
+        <a href="https://x.com/" target="_blank" aria-label="X (Twitter)">
+          <svg viewBox="0 0 32 32" height="1.2em"><circle cx="16" cy="16" r="16" fill="none"/><g stroke="none"><path d="M10 10l12 12M22 10L10 22" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></g></svg>
+        </a>
+      </div>
+      <div class="footer-copyright">
+        &copy; 2026 Danayo Lens & Legacy. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // PORTFOLIO TABS & LIGHTBOX
+    const categories = document.querySelectorAll('.portfolio-categories button');
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+    categories.forEach(btn => btn.addEventListener('click', function() {
+      categories.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      this.classList.add('active');
+      this.setAttribute('aria-selected', 'true');
+      const cat = this.dataset.category;
+      portfolioItems.forEach(item => {
+        if(item.dataset.category === cat) {
+          item.style.display = '';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }));
+
+    // Lightbox
+    const lightbox = document.getElementById('lightboxModal');
+    const lightboxInner = document.getElementById('lightboxInner');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const closeBtn = document.getElementById('lightboxCloseBtn');
+    portfolioItems.forEach(item => {
+      item.addEventListener('click', function(e) {
+        // For item: get image or video element
+        let child, caption;
+        child = this.querySelector('img,video');
+        caption = this.querySelector('.portfolio-title')?.textContent ?? '';
+        if(!child) return;
+        lightboxInner.innerHTML = '';
+        let clone = child.cloneNode(true);
+        if (clone.tagName === 'VIDEO') {
+          clone.removeAttribute('autoplay');
+          clone.setAttribute('controls', '');
+          clone.setAttribute('autoplay', '');
+        }
+        lightboxInner.appendChild(clone);
+        lightboxCaption.textContent = caption;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        closeBtn.focus();
+      });
+      item.addEventListener('keydown', function(e) {
+        if(e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          this.click();
+        }
+      })
+    });
+    closeBtn.addEventListener('click', function() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+      lightboxInner.innerHTML = '';
+    });
+    document.addEventListener('keydown', function(e) {
+      if(lightbox.classList.contains('active') && e.key === 'Escape') {
+        closeBtn.click();
+      }
+    });
+
+    // TESTIMONIALS CAROUSEL
+    const testimonials = document.querySelectorAll('.testimonial');
+    const prevBtn = document.getElementById('testimonialPrevBtn');
+    const nextBtn = document.getElementById('testimonialNextBtn');
+    let tIndex = 0;
+    function showTestimonial(i) {
+      testimonials.forEach((t, idx) => t.classList.toggle('current', i === idx));
+    }
+    prevBtn.addEventListener('click', function(){
+      tIndex = (tIndex + testimonials.length - 1) % testimonials.length;
+      showTestimonial(tIndex);
+    });
+    nextBtn.addEventListener('click', function(){
+      tIndex = (tIndex + 1) % testimonials.length;
+      showTestimonial(tIndex);
+    });
+
+    // ANIMATE ON SCROLL - FADE IN
+    const fadeEls = document.querySelectorAll('section, .service-card, .portfolio-item');
+    const appear = (el) => el.classList.add('fade-in');
+    function fadeOnScroll() {
+      fadeEls.forEach(el => {
+        let rect = el.getBoundingClientRect();
+        if(rect.top < window.innerHeight-120) {
+          appear(el);
+        }
+      });
+    }
+    window.addEventListener('scroll', fadeOnScroll, {passive:true});
+    document.addEventListener('DOMContentLoaded', () => {
+      setTimeout(fadeOnScroll, 300);
+    });
+    // Smooth scroll fallback for internal links (for safari/ie)
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', function(e){
+        const target = document.querySelector(this.getAttribute('href'));
+        if(target) {
+          e.preventDefault();
+          target.scrollIntoView({behavior: 'smooth', block: 'start'});
+        }
+      });
+    });
+
+  </script>
+</body>
+</html>
