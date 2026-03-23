@@ -1005,7 +1005,11 @@
   <!-- CONTACT -->
   <section id="contact">
     <h2>Contact</h2>
-    <form class="contact-form" name="contact" method="POST" enctype="application/x-www-form-urlencoded" autocomplete="on">
+    <form class="contact-form" name="contact" method="POST" action="https://formsubmit.co/hello@danayolens.com" enctype="application/x-www-form-urlencoded" autocomplete="on">
+      <input type="hidden" name="_subject" value="New Danayo Lens website inquiry">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://dist-two-rosy-22.vercel.app/#contact">
       <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name">
       <input type="email" name="email" placeholder="Your Email" required aria-label="Your Email">
       <textarea name="message" placeholder="Your Message" rows="5" required aria-label="Your Message"></textarea>
